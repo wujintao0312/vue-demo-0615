@@ -45,6 +45,7 @@ export default {
           });
           // 储存登陆成功拿到的个人信息
           sessionStorage.setItem('token', data.token)
+          sessionStorage.setItem('user_id', data.user.id)
           // 跳转到个人中心页面
           this.$router.push('/user')
         } else {
