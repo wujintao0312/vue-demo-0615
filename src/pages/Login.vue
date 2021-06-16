@@ -13,7 +13,6 @@
 </template>
 
 <script>
-import axios from 'axios'
 export default {
   data() {
     return {
@@ -29,7 +28,7 @@ export default {
       if (!this.$refs.password.validate(this.password)) {
         return
       }
-      axios({
+      this.$axios({
         method: 'post',
         url: '/login',
         data: {
@@ -45,6 +44,7 @@ export default {
             icon: 'like-o',
           });
           // 储存登陆成功拿到的个人信息
+          sessionStorage.setItem('token', data.token)
           // 跳转到个人中心页面
           this.$router.push('/user')
         } else {
@@ -57,6 +57,11 @@ export default {
     goRegist() {
       this.$router.push('/register')
     }
+  },
+  created() {
+    const {username, password} = this.$route.params
+    this.username = username
+    this.password = password
   }
 }
 </script>

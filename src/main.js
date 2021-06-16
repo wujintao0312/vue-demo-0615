@@ -3,7 +3,7 @@ import App from './App.vue'
 // 引入路由
 import router from './router/index'
 
-// 引入通过样式/字体图标
+// 引入通用样式/字体图标
 import './styles/iconfont.css'
 import './styles/base.css'
 
@@ -12,8 +12,8 @@ import 'lib-flexible'
 
 // 引入vant组件库
 import vant from 'vant'
-Vue.use(vant)
 import 'vant/lib/index.css'
+Vue.use(vant)
 
 // 全局注册组件
 import PageHeader from './components/PageHeader.vue'
